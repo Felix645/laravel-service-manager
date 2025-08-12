@@ -1,0 +1,19 @@
+{
+    "name": "neon-php/laravel-service-manager",
+    "description": "Package for handling API versioning and client abstraction",
+    "type": "library",
+    "require": {
+        "laravel/framework": "^12.0"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Neon\\ServiceManager\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Felix Kuntscher"
+        }
+    ]
+}
