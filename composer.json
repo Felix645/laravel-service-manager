@@ -15,5 +15,12 @@
         {
             "name": "Felix Kuntscher"
         }
-    ]
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "\\Neon\\ServiceManager\\ServiceProvider"
+            ]
+        }
+    }
 }
