@@ -73,7 +73,7 @@ return [
     |
     | Implementations specified under this key will be used when no
     | client implementation was found and the interface is present under
-    | the corresponding version
+    | the corresponding version. (Medium priority)
     |
     | Example:
     |   'versions' => [
@@ -97,7 +97,7 @@ return [
     |
     | Implementations specified under this key will only be used when an
     | implementation is present under the combination of the corresponding
-    | version and client_id
+    | version and client_id. (Highest priority)
     |
     | Example:
     |   'versions' => [
