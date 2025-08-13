@@ -66,8 +66,11 @@ class ServiceProvider extends BaseServiceProvider
         }
 
         $binding_function = function($app, $interface) {
-            $client_id = $app->request->route()->parameter('client_id');
-            $version = $app->request->route()->parameter('version');
+            $client_slug_key = ServiceManager::getClientSlugKey();
+            $version_slug_key = ServiceManager::getVersionSlugKey();
+            
+            $client_id = $app->request->route()->parameter($client_slug_key);
+            $version = $app->request->route()->parameter($version_slug_key);
 
             $implementation = ServiceManager::create($version, $client_id)->getImplementation($interface);
 
