@@ -1,6 +1,13 @@
 <?php
 
+use Neon\ServiceManager\Mocks\AnotherInterface;
+use Neon\ServiceManager\Mocks\ClientImplementation;
+use Neon\ServiceManager\Mocks\DefaultImplementation;
+use Neon\ServiceManager\Mocks\TestInterface;
+use Neon\ServiceManager\Mocks\VersionImplementation;
+
 return [
+
     /*
     |--------------------------------------------------------------------------
     | Version slug key
@@ -44,7 +51,8 @@ return [
     */
 
     'interfaces' => [
-
+        TestInterface::class,
+        AnotherInterface::class,
     ],
 
     /*
@@ -63,7 +71,7 @@ return [
     */
 
     'default' => [
-
+        TestInterface::class => DefaultImplementation::class,
     ],
 
     /*
@@ -87,7 +95,9 @@ return [
     */
 
     'versions' => [
-
+        'v2' => [
+            TestInterface::class => VersionImplementation::class,
+        ]
     ],
 
     /*
@@ -115,6 +125,10 @@ return [
     */
 
     'clients' => [
-
+        'v3' => [
+            'test_client' => [
+                TestInterface::class => ClientImplementation::class,
+            ]
+        ]
     ]
 ];
